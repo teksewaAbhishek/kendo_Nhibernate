@@ -58,7 +58,7 @@ namespace NhibernateCRUD
                 }
             }
 
-            // Redirect back to the default page after saving.
+            
             Response.Redirect("Default.aspx");
         }
 

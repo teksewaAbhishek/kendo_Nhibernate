@@ -19,6 +19,13 @@
     <form id="form1" runat="server">
         <telerik:RadScriptManager ID="RadScriptManager1" runat="server" />
 
+        <div>
+    <label for="txtSearch">Search:</label>
+    <input type="text" id="txtSearch" runat="server" />
+    <asp:Button runat="server" ID="btnSearch" Text="Search" OnClick="btnSearch_Click" />
+</div>
+
+
         <asp:Button runat="server" ID="btnAddItem" Text="Add Item" OnClick="btnAddItem_Click" />
 
         <telerik:RadGrid ID="RadGrid1" runat="server" AllowPaging="True" AllowSorting="True"
@@ -46,5 +53,5 @@
 
 
 
-</body>/html>
+</body>    </html>
 
