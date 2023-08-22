@@ -24,6 +24,15 @@ namespace NhibernateCRUD
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
+        /// RadScriptManager1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Telerik.Web.UI.RadScriptManager RadScriptManager1;
+
+        /// <summary>
         /// hdnId control.
         /// </summary>
         /// <remarks>
@@ -39,7 +48,7 @@ namespace NhibernateCRUD
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFirstName;
+        protected global::Telerik.Web.UI.RadTextBox txtFirstName;
 
         /// <summary>
         /// txtLastName control.
@@ -48,7 +57,7 @@ namespace NhibernateCRUD
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtLastName;
+        protected global::Telerik.Web.UI.RadTextBox txtLastName;
 
         /// <summary>
         /// txtDesignation control.
@@ -57,15 +66,15 @@ namespace NhibernateCRUD
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDesignation;
+        protected global::Telerik.Web.UI.RadTextBox txtDesignation;
 
         /// <summary>
-        /// btnDelete control.
+        /// btnSave control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnDelete;
+        protected global::Telerik.Web.UI.RadButton btnSave;
     }
 }

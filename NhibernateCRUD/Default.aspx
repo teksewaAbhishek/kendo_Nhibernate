@@ -13,53 +13,44 @@
             margin-left: auto !important;
             margin-right: auto !important;
         }
+
+        .row-options-box {
+        display: none;
+        position: absolute;
+        background-color: 	#FFFAFA; 
+        color: white; 
+        border: 1px solid #ddd;
+        padding: 5px;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .options-item {
+        margin-bottom: 5px;
+    }
     </style>
 
-    <script>
-        $(document).ready(function () {
-            $("#RadGrid1").on("click", "td", function () {
-                // Remove previously added options
-                $(".row-options").remove();
 
-                // Get the clicked cell
-                var cell = $(this);
 
-                // Create the options HTML
-                var optionsHtml = '<div class="row-options">' +
-                    '<a href="#" class="edit-button">Edit</a>' +
-                    '<a href="#" class="delete-button">Delete</a>' +
-                    '</div>';
 
-                // Add the options to the cell
-                cell.append(optionsHtml);
-
-                // Attach click event to the edit button
-                cell.find(".edit-button").on("click", function (event) {
-                    event.preventDefault();
-                    // Handle the edit action
-                    var id = cell.closest("tr").find("td:eq(0)").text(); // Get the ID from the first cell
-                    window.location.href = "EditItem.aspx?id=" + id;
-                });
-
-                // Attach click event to the delete button
-                cell.find(".delete-button").on("click", function (event) {
-                    event.preventDefault();
-                    // Handle the delete action
-                    var id = cell.closest("tr").find("td:eq(0)").text(); // Get the ID from the first cell
-                    window.location.href = "DeleteItem.aspx?id=" + id;
-                    
-                });
-            });
-        });
-    </script>
 </head>
 <body>
     <form id="form1" runat="server">
         <telerik:RadScriptManager ID="RadScriptManager1" runat="server" />
 
+         <asp:Button ID="btnAddItem" runat="server" Text="Add Item" OnClick="btnAddItem_Click" />
+        <br />
+        
+      
+        <div style="margin-top: 20px;"> 
+            <label for="txtSearch">Search:</label>
+            <input type="text" id="txtSearch" runat="server" />
+            <asp:Button runat="server" ID="btnSearch" Text="Search" OnClick="btnSearch_Click" />
+        </div>
+
+        <div style="margin-top: 20px;">
         <telerik:RadGrid ID="RadGrid1" runat="server" AllowPaging="True" AllowSorting="True"
             OnNeedDataSource="RadGrid1_NeedDataSource"
-            CssClass="auto-style1" Width="1440px" Skin="Bootstrap">
+            CssClass="auto-style1"  Skin="Bootstrap">
 
             <MasterTableView AutoGenerateColumns="False" DataKeyNames="Id">
                 <Columns>
@@ -70,7 +61,67 @@
                 </Columns>
             </MasterTableView>
         </telerik:RadGrid>
-    </form>
+             </div>
+
+
+
+<div id="optionsBox" class="row-options-box" style="display: none;">
+    <div class="options-item">
+        <a href="#" class="edit-button">Edit</a>
+    </div>
+    <div class="options-item">
+        <a href="#" class="delete-button">Delete</a>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        var currentOptionsBox = null;
+
+        $("#RadGrid1").on("contextmenu", "td", function (event) {
+            event.preventDefault();
+
+            var cell = $(this);
+
+            if (currentOptionsBox) {
+                currentOptionsBox.remove(); 
+            }
+
+            var optionsBox = $("#optionsBox").clone();
+
+            optionsBox.find(".edit-button").on("click", function (event) {
+                event.preventDefault();
+                var id = cell.closest("tr").find("td:eq(0)").text();
+                window.location.href = "EditItem.aspx?id=" + id;
+            });
+
+            optionsBox.find(".delete-button").on("click", function (event) {
+                event.preventDefault();
+                var id = cell.closest("tr").find("td:eq(0)").text();
+                window.location.href = "DeleteItem.aspx?id=" + id;
+            });
+
+            optionsBox.css({
+                top: event.clientY,
+                left: event.clientX
+            });
+
+            $("body").append(optionsBox);
+            optionsBox.show();
+
+            currentOptionsBox = optionsBox;
+
+            
+            $(document).on("click", function () {
+                if (currentOptionsBox) {
+                    currentOptionsBox.remove();
+                    currentOptionsBox = null;
+                }
+            });
+        });
+    });
+</script>
+</form>
 </body>
 </html>
 
