@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="NhibernateCRUD._Default" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="NhibernateCRUD._Default" %>
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -37,6 +37,7 @@
     <form id="form1" runat="server">
         <telerik:RadScriptManager ID="RadScriptManager1" runat="server" />
 
+<<<<<<< HEAD
          <asp:Button ID="btnAddItem" runat="server" Text="Add Item" OnClick="btnAddItem_Click" />
         <br />
         
@@ -48,6 +49,17 @@
         </div>
 
         <div style="margin-top: 20px;">
+=======
+        <div>
+    <label for="txtSearch">Search:</label>
+    <input type="text" id="txtSearch" runat="server" />
+    <asp:Button runat="server" ID="btnSearch" Text="Search" OnClick="btnSearch_Click" />
+</div>
+
+
+        <asp:Button runat="server" ID="btnAddItem" Text="Add Item" OnClick="btnAddItem_Click" />
+
+>>>>>>> 4402f55b26d733c5c99a7ce3ae120f2941212c01
         <telerik:RadGrid ID="RadGrid1" runat="server" AllowPaging="True" AllowSorting="True"
             OnNeedDataSource="RadGrid1_NeedDataSource"
             CssClass="auto-style1"  Skin="Bootstrap">
@@ -123,5 +135,6 @@
 </script>
 </form>
 </body>
-</html>
+    </html>
+
 

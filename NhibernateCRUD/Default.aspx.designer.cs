@@ -33,6 +33,7 @@ namespace NhibernateCRUD
         protected global::Telerik.Web.UI.RadScriptManager RadScriptManager1;
 
         /// <summary>
+<<<<<<< HEAD
         /// btnAddItem control.
         /// </summary>
         /// <remarks>
@@ -42,6 +43,9 @@ namespace NhibernateCRUD
         protected global::System.Web.UI.WebControls.Button btnAddItem;
 
         /// <summary>
+=======
+<<<<<<< HEAD
+>>>>>>> 4402f55b26d733c5c99a7ce3ae120f2941212c01
         /// txtSearch control.
         /// </summary>
         /// <remarks>
@@ -60,6 +64,20 @@ namespace NhibernateCRUD
         protected global::System.Web.UI.WebControls.Button btnSearch;
 
         /// <summary>
+<<<<<<< HEAD
+=======
+        /// btnAddItem control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAddItem;
+
+        /// <summary>
+=======
+>>>>>>> 010a0e41e4817fb44f685276db1326cf8de140bb
+>>>>>>> 4402f55b26d733c5c99a7ce3ae120f2941212c01
         /// RadGrid1 control.
         /// </summary>
         /// <remarks>

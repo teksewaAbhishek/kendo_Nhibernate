@@ -51,9 +51,19 @@ namespace NhibernateCRUD
             RadGrid1.Rebind();
         }
 
+<<<<<<< HEAD
+        protected void btnSearch_Click(object sender, EventArgs e)
+=======
+<<<<<<< HEAD
         protected void btnSearch_Click(object sender, EventArgs e)
         {
+            string searchTerm = txtSearch.Value.Trim(); 
+=======
+      /*  protected void btnSearch_Click(object sender, EventArgs e)
+>>>>>>> 4402f55b26d733c5c99a7ce3ae120f2941212c01
+        {
             string searchTerm = txtSearch.Value.Trim();
+>>>>>>> 010a0e41e4817fb44f685276db1326cf8de140bb
 
             if (!string.IsNullOrEmpty(searchTerm))
             {
@@ -69,11 +79,23 @@ namespace NhibernateCRUD
             }
             else
             {
-
+<<<<<<< HEAD
+              
                 RadGrid1.Rebind();
             }
         }
 
+=======
+
+                RadGrid1.Rebind();
+            }
+        }
+<<<<<<< HEAD
+
+=======
+*/
+>>>>>>> 010a0e41e4817fb44f685276db1326cf8de140bb
+>>>>>>> 4402f55b26d733c5c99a7ce3ae120f2941212c01
 
 
         protected void RadGrid1_UpdateCommand(object sender, GridCommandEventArgs e)
